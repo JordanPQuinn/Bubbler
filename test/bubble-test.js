@@ -96,7 +96,7 @@ describe('Bubble', function() {
   it('should lose a life when it dies', function() {
     newBubble = new Bubble(10, 10, 30, 30)
     newBubble.lives = 3
-    newBubble.die()
+    newBubble.die();
 
     assert.equal(newBubble.lives, 2)
   })
