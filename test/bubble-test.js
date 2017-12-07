@@ -76,7 +76,7 @@ describe('Bubble', function() {
       obstacle.width = 30;
       obstacle.height = 30;
   
-    newBubble.collisionDetect(obstacle);
+    newBubble.collisionDetectBottomHalf(obstacle);
     assert.equal(newBubble.lives, 2);
   })
                                                                                                                                                                                                                                                                                                                                                                                                                                           
@@ -89,7 +89,7 @@ describe('Bubble', function() {
       obstacle.width = 30;                                           
       obstacle.height = 30;
   
-    newBubble.collisionDetect(obstacle, 'left');
+    newBubble.collisionDetectTopHalf(obstacle, 'left');
     assert.equal(newBubble.lives, 2);
   })
 
