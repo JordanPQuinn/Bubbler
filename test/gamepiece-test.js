@@ -13,8 +13,9 @@ describe('GamePiece', function() {
   })
 
   it('should take parameters', function() {
-  newGamePiece = new GamePiece(10, 10, 30, 30, 'images/ax.svg');
-  assert.equal(newGamePiece.x, 10);
+    let newGamePiece = new GamePiece(10, 10, 30, 30, 'images/ax.svg');
+    
+    assert.equal(newGamePiece.x, 10);
   })
 
 })
