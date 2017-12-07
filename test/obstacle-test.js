@@ -9,7 +9,7 @@ describe('Obstacle', function() {
     assert.equal('true', 'true');
   })
 
-  it.only('should be a constructor', function() {
+  it('should be a constructor', function() {
     assert.isFunction(Obstacle);
   })
 
@@ -21,7 +21,7 @@ describe('Obstacle', function() {
 
   it.only('should be able to move right', function() {
     let newObstacle = new Obstacle(10, 10, 30, 30, 'images/ax.svg');
-
+    
     assert.equal(newObstacle.x, 10);
     newObstacle.scrollRight();
     assert.equal(newObstacle.x, 10.5);
@@ -45,5 +45,12 @@ describe('Obstacle', function() {
     assert.equal(newObstacle.x, 0);
   })
 
-
+  it('should reset once the left obstacles go through the canvas', function() {
+    newObstacle = new Obstacle(-30, 10, 30, 30, 'images/ax.svg')
+    canvas = {};
+    canvas.width = 200;
+    assert.equal(newObstacle.x, -30);
+    newObstacle.resetLeft(canvas);
+    assert.equal(newObstacle.x, 200);
+  })
 })
