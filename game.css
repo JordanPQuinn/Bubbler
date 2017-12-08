@@ -13,3 +13,14 @@
   margin: auto;
   z-index: 10;
 }
+
+#reset-button:hover {
+  cursor: pointer;
+}
+
+#level {
+  display: none;
+  width: 55px;
+  margin: auto;
+  color: #3988E7;
+}
