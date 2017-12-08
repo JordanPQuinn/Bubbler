@@ -13,28 +13,33 @@ describe('Obstacle', function() {
     assert.isFunction(Obstacle);
   })
 
-  it('should take parameters', function() {
-    newObstacle = new Obstacle(10, 10, 30, 30, 'images/ax.svg');
+  it.only('should take parameters', function() {
+    let newObstacle = new Obstacle(10, 10, 30, 30, 'images/ax.svg');
+
     assert.equal(newObstacle.x, 10);
   })
 
-  it('should be able to move right', function() {
-    newObstacle = new Obstacle(10, 10, 30, 30, 'images/ax.svg');
+  it.only('should be able to move right', function() {
+    let newObstacle = new Obstacle(10, 10, 30, 30, 'images/ax.svg');
+    
     assert.equal(newObstacle.x, 10);
     newObstacle.scrollRight();
     assert.equal(newObstacle.x, 10.5);
   })
 
-  it('should be able to move left', function() {
-    newObstacle = new Obstacle(10, 10, 30, 30, 'images/ax.svg');
+  it.only('should be able to move left', function() {
+    let newObstacle = new Obstacle(10, 10, 30, 30, 'images/ax.svg');
+
     assert.equal(newObstacle.x, 10);
     newObstacle.scrollLeft();
     assert.equal(newObstacle.x, 9.5);
   })
 
-  it('should reset once the right obstacles go through the canvas', function() {
-    newObstacle = new Obstacle(200, 10, 30, 30, 'images/ax.svg')
-    canvasWidth = 185;
+  it.only('should reset once it goes through the canvas', function() {
+    let newObstacle = new Obstacle(200, 10, 30, 30, 'images/ax.svg');
+
+    let canvasWidth = 185;
+    
     assert.equal(newObstacle.x, 200);
     newObstacle.resetRight(canvasWidth);
     assert.equal(newObstacle.x, 0);
@@ -48,6 +53,4 @@ describe('Obstacle', function() {
     newObstacle.resetLeft(canvas);
     assert.equal(newObstacle.x, 200);
   })
-
-
 })
